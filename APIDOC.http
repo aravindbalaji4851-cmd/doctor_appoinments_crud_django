@@ -1,0 +1,46 @@
+# DOCTORS 
+
+# api call for listing doctors 
+
+###
+GET http://127.0.0.1:8000/doctors/
+Accept: application/json
+
+
+# api call for creating doctor
+
+###
+POST http://127.0.0.1:8000/doctors/
+Content-Type: application/json
+
+{
+    "name":"ajith",
+    "specialization":"uro",
+    "fee":1000,
+    "qualification":"mbbs",
+    "email":"ajith@gamil.com"
+}
+
+# api call for listing specific doctor
+
+###
+GET http://127.0.0.1:8000/doctors/2/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/doctors/2/
+Content-Type: application/json
+
+{
+    "name": "naveen",
+    "specialization": "urology",
+    "fee": 1200,
+    "qualification": "mbbs",
+    "email": "naveen@gamil.com"
+}
+
+# api call for deleting doctor
+
+###
+DELETE http://127.0.0.1:8000/doctors/2/
+Accept: application/json
