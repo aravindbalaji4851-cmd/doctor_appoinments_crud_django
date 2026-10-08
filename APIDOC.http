@@ -53,6 +53,7 @@ Accept: application/json
 ###
 GET http://127.0.0.1:8000/v2/doctors/
 Accept: application/json
+Authorization: Basic superuser:superuser
 
 # api call for creating doctor
 
@@ -120,18 +121,18 @@ POST http://127.0.0.1:8000/appointments/
 Content-Type: application/json
 
 {
-    "patient_name":"Rahul",
+    "patient_name":"Ajay",
     "phone":"123456789",
     "doctor":1,
-    "appointment_date":"2026-10-02",
-    "problem":"weezing"
+    "appointment_date":"2026-10-11",
+    "problem":"cold"
 }
 
 
 
 # booking_v2 ================================
 
-# api call for creating booking
+# user register api
 ###
 POST http://127.0.0.1:8000/v2/booking/signup/
 Content-Type: application/json
@@ -141,3 +142,54 @@ Content-Type: application/json
     "email":"django@gmail.com",
     "password":"django"
 }
+
+# api call for listing bookings
+###
+GET http://127.0.0.1:8000/v2/booking/appointments/
+Accept: application/json
+Authorization: Basic django:django
+
+# api call for creating booking
+
+###
+POST http://127.0.0.1:8000/v2/booking/appointments/
+Content-Type: application/json
+Authorization: Basic django:django
+
+{
+    "patient_name":"gowtham",
+    "phone":"123456780",
+    "doctor":1,
+    "appointment_date":"2026-10-21",
+    "problem":"weezing"
+}
+
+# api call for specific appointments
+###
+GET http://127.0.0.1:8000/v2/booking/appointments/13/
+Accept: application/json
+Authorization: Basic django:django
+
+# api call for updating appointments
+###
+PUT http://127.0.0.1:8000/v2/booking/appointments/13/
+Content-Type: application/json
+Authorization: Basic django:django
+
+{
+  "id": 13,
+  "patient_name": "basil joseph",
+  "phone": "123456782",
+  "appointment_date": "2026-10-21",
+  "token_number": 1,
+  "appointment_time": "10:00:00",
+  "problem": "weezing",
+  "created_at": "2026-10-07T05:48:47.403119Z",
+  "doctor": 1  
+}
+
+# api call for deleting appointments
+###
+DELETE http://127.0.0.1:8000/v2/booking/appointments/9/
+Accept: application/json
+Authorization: Basic django:django

@@ -27,6 +27,7 @@ class AppointmentListCreateView(APIView):
 
         if serializer_inst.is_valid():
 
+
             cleaned_data = serializer_inst.validated_data
 
             doctor = cleaned_data.get("doctor")

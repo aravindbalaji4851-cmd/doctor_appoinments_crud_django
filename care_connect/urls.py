@@ -36,4 +36,5 @@ urlpatterns = [
 
     #application routes
     path('v2/booking/',include("booking_v2.urls"))
+
 ]
